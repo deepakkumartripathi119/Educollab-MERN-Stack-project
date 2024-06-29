@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Quicksand";
+  }
+.ProfileCardBox{
+    display: flex;
+    width: 50vw;
+    height: 35vw;
+}
+
+.ProfileCard-leftPart{
+    margin:1vw;
+    width: 30%;
+}
+
+.ProfileCard-rightPart{
+    margin:1vw;
+    width: 70%;
+}
+.ProfileCard-image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 10vw;
+    font-weight: 600;
+    width: 100%;
+    height: 35%;
+    background-color: #0059CD;
+    overflow: hidden;
+    border-radius: 1vw;
+}
+.ProfileCard-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-size: 1vw;
+    color:white;
+}
+
+.ProfileCard-about-me-parent{
+    margin-top: 1vw;
+    border-radius: 1vw;
+    height: 20%;
+    border:1px solid black;
+    overflow-y: auto;
+}
+.ProfileCard-about-me-parent::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  .ProfileCard-about-me-parent::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+.ProfileCard-about-me{
+    padding: .5vw;
+    /* max-height: 20%;
+    min-height: 10%; */
+    color: #0059CD;
+}
+.ProfileCard-about-me-heading{
+    font-size: 1.3vw;
+    padding-top: .2vw;
+    color: #0059CD;
+    font-weight: bold;
+}
+.ProfileCard-about-me-divider{
+    margin-top: .2vw;
+    background-color:#0059CD;
+    border-radius: 10vw;
+    height: 1.5px;
+    font-weight:bolder;
+}
+.ProfileCard-about-me-body{
+    padding-top: .2vw;
+    font-size: 1vw;
+    padding-bottom: .2vw;
+}
+
+.ProfileCard-tag_storer-parent{
+    border-radius: 1vw;
+    min-height: 20%;
+    background-color: #E1E4E9;
+    margin-top: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}
+.ProfileCard-tag_storer-parent::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  .ProfileCard-tag_storer-parent::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+.ProfileCard-tag_storer{
+    display: flex;
+    flex-wrap: wrap;
+    width:90%;
+    align-items: center;
+    padding-top: .5vw;
+
+  }
+  .ProfileCard-tag{
+    border-radius: 15px;
+    border:1px solid #0059cd;
+    background-color: white;
+    text-align: center;
+    margin-bottom: .5vw;
+    margin-right: .7vw;
+    width:fit-content;
+    height:fit-content;
+    padding-left: .5vw;
+    padding-right: .5vw;
+    font-size: 1vw;
+    color: #0059cd;
+    overflow: hidden;
+  }
+
+  .ProfileCard-Github-id-container {
+    border-radius: 0.5vw;
+    background-color: #0059cd;
+    margin-top: 1vw;
+    align-items: center;
+  }
+  
+  .ProfileCard-Github-id {
+    display: flex;
+    padding-left: 0.5vw;
+    font-size: 1.2vw;
+    color: white;
+    padding-top: 0.2vw;
+    padding-bottom: 0.2vw;
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  }
+  
+  /* Optional: Add hover effect */
+  .ProfileCard-Github-id:hover {
+    text-decoration: underline;
+  }
+
+.ProfileCard-Email-id-container{
+    border-radius: 0.5vw;
+    background-color: #0059CD;
+    margin-top: 1vw;
+    display: flex;
+    align-items: center;  
+}
+.ProfileCard-Email-id{
+    padding-left: .5vw;
+    font-size: 1.2vw;
+    color: white;
+    padding-top: .2vw;
+    padding-bottom: .2vw;
+}
+
+.ProfileCard-rightPart-upper-part{
+    padding-top: .5vw;
+    font-size: larger;
+    color: #0059CD;
+    height:12%;
+    display: flex;
+    justify-content: space-between;
+}
+.ProfileCard-rightPart-upper-part-name{
+    display: flex;
+    font-size: 1.5vw;
+    font-weight: bolder;
+    padding-bottom: .2vw;
+}
+.editProfileIcon {
+  width: 1.8vw;
+  margin-left: 1vw;
+  cursor: pointer;
+}
+
+.ProfileCard-rightPart-upper-part-post{
+    font-size: 1vw;
+}
+.ProfileCard-rightPart-upper-part-credits-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ProfileCard-rightPart-upper-part-credits-side img {
+  width: 2vw;
+  height: 2vw;
+  margin: 1vw 1vw;
+}
+.ProfileCard-rightPart-upper-part-credits{
+    font-size: 1.5vw;
+    font-weight: bolder;
+}
+
+.ProfileCard-rightPart-project-space{
+    height:86%;
+    border-radius: 1vw;
+    background-color:#C9CDD6;
+}
+.navbar-right-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    padding:.4vw;
+    width: 2vw;
+    height:2vw;
+    box-shadow: 4px 4px 7.300000190734863px 0px #00000033,
+    -3px -4px 4px 0px #FFFFFF80 inset,
+    -3px -3px 4px 0px #FFFFFF,
+    3px 3px 7.599999904632568px -3px #00000033 inset;
+  }
+  .navbar-right-circle-img{
+    width: 1vw;
+  }

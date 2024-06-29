@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  font-family: 'Satisfy', cursive;
+  font-family: 'Wix Madefor Text', sans-serif;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.Popup_projectCard {
+  margin: 0%;
+  padding: 0%;
+}
+
+.ProjectCardBox {
+  height: fit-content;
+  margin-bottom: 2vw;
+  width: 26vw;
+  border-radius: 1vw;
+  padding: 1vw;
+  box-shadow: 3px 3px 7.6px -3px rgba(0, 0, 0, 0.2) inset, -3px -3px 4px #fff,
+    -3px -4px 4px rgba(255, 255, 255, 0.5) inset,
+    4px 4px 7.3px rgba(0, 0, 0, 0.2);
+}
+
+
+.ProjectCardBoxUpper {
+  height: 11vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.ProjectCardBoxUpperLeft {
+  width: 30%;
+  background-color: #0059CD;
+  box-shadow: 4px 4px 13.4px rgba(255, 255, 255, 0.36) inset,
+    -3px -4px 4px rgba(0, 0, 0, 0.25) inset,
+    4px 4px 7.3px rgba(0, 0, 0, 0.2);
+  border-radius: 1.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5vw;
+}
+
+.ProjectCardBoxUpperLeftName {
+  color: white;
+  font-size: 5vw;
+  font-weight: 500;
+}
+
+.ProjectCardBoxUpperRight {
+  width: 70%;
+}
+
+.ProjectCardBoxUpperRightCW {
+  height: 19%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.ProjectCardBoxUpperRightCWLikes {
+  margin-right: .5vw;
+  color: #0059CD;
+  font-size: 1.2vw;
+  font-weight: 500;
+}
+
+.ProjectCardBoxUpperRightCWCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  padding: .08vw;
+  width: 2vw;
+  height: 2vw;
+  box-shadow: 4px 4px 7.300000190734863px 0px #00000033,
+    -3px -4px 4px 0px #FFFFFF80 inset,
+    -3px -3px 4px 0px #FFFFFF,
+    3px 3px 7.599999904632568px -3px #00000033 inset;
+}
+
+.ProjectCardBoxUpperRightCWCircleImg {
+  width: 1.3vw;
+}
+
+.ProjectCardBoxUpperRightName {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 81%;
+}
+
+.ProjectCardBoxUpperRightProjectName {
+  font-size: 2.3vw;
+  color: #0059CD;
+  font-weight: 500;
+  margin-bottom: 1vw;
+}
+
+.ProjectCardBoxUpperRightProjectNameHR {
+  background-color: #0059CD;
+  height: .2vw;
+  color: #0059CD;
+}
+
+.ProjectCardBoxLower {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1vw;
+  height: 3vw;
+  border-radius: 1vw;
+  background-color: #E1E4E9;
+}
+
+.ProjectCardBoxLowerCreditsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.ProjectCardBoxLowerCredits {
+  margin-left: 1.2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProjectCardBoxLowerCreditsDollar {
+  height: 1.2vw;
+}
+
+.ProjectCardBoxLowerCreditsAmount {
+  margin-left: .5vw;
+  font-size: 1.4vw;
+  color: #0059CD;
+}
+
+/* POPUP DESIGN */
+
+.popup-content {
+  margin: auto;
+  background: rgb(255, 255, 255);
+  border-radius: .8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-arrow {
+  color: rgb(255, 255, 255);
+}
+
+[role='tooltip'].popup-content {
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+[data-popup='tooltip'].popup-overlay {
+  background: transparent;
+}
+
+.ProjectCardBoxLowerViewPopup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: .3vw;
+}
+
+.ProjectCardBoxLowerViewPopupButton {
+  cursor: pointer;
+  background-color: #0059CD;
+  box-shadow: 4px 4px 13.4px rgba(255, 255, 255, 0.36) inset,
+    -3px -4px 4px rgba(0, 0, 0, 0.25) inset,
+    4px 4px 7.3px rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+  padding-right: 3vw;
+  padding-left: 3vw;
+  padding-top: .6vw;
+  padding-bottom: .6vw;
+  border-radius: 1vw;
+}
+
+.ProjectCardBoxLowerViewPopupView {
+  font-size: 1.2vw;
+}

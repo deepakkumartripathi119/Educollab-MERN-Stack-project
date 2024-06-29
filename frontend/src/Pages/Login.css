@@ -1,0 +1,97 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.signIn_body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #99D1FF, #ffffff);
+}
+
+.signin_maindiv {
+  height: 80%;
+  width: 80%;
+  min-width: fit-content;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(252, 252, 253, 0.9);
+  padding: 4vw;
+  border-radius: 1.5vw;
+  box-shadow: 0 1vw 5vw rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(50px); */
+  max-width: 80vw; /* Max width to ensure it doesn't get too wide on larger screens */
+}
+
+.signinUpperdiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+}
+
+.login_welcome {
+  font-size: 4.5vw;
+  position: relative;
+}
+
+.signInHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: center;
+}
+
+.brandName {
+  color: #0077EB;
+}
+
+.signInImg {
+  height: 80%;
+  aspect-ratio: 1;
+}
+
+.loginSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 1.8vw;
+  border: none;
+  padding: 2% 4%;
+  font-size: 2vw;
+}
+
+.loginbtn {
+  width: fit-content;
+  padding: 1.6% 4%;
+  border-radius: 0.4vw;
+  border: none;
+  background-color:  #E1E1E1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 2.2vw;
+  cursor: pointer;
+}
+
+.outlookIconImg {
+  width: 3vw;
+  margin-right: 2vw;
+}
+
+@media (max-width: 700px) { /* 800px equivalent if base font size is 16px */
+  .login_welcome {
+    font-size: 8vw;
+  }
+  .signInImg {
+    height: 50%;
+    margin-top: 10%;
+  }
+}
