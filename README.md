@@ -46,8 +46,8 @@ The user interface is designed to be intuitive and user-friendly, emphasizing ea
 
 2. **Clone the Repository:**
    ```sh
-   git clone https://github.com/Nikhil-IITG/KritiDevelopmentPS.git
-   cd KritiDevelopmentPS
+   git clone https://github.com/deepakkumartripathi119/Educollab-MERN-Stack-project.git
+   cd 
    ```
 
 3. **Backend Setup:**
