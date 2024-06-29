@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "721756836869",
+    "project_id": "edu-colab-kriti",
+    "storage_bucket": "edu-colab-kriti.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721756836869:android:8d7c265d36ac8c58dc786c",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCknwo5L-6X-dZzLf6-M8YVTo2EZ8Ejyn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
