@@ -47,7 +47,7 @@ The user interface is designed to be intuitive and user-friendly, emphasizing ea
 2. **Clone the Repository:**
    ```sh
    git clone https://github.com/deepakkumartripathi119/Educollab-MERN-Stack-project.git
-   cd 
+   cd Educollab
    ```
 
 3. **Backend Setup:**
