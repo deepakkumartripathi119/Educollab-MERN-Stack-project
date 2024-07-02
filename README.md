@@ -71,7 +71,7 @@ The user interface is designed to be intuitive and user-friendly, emphasizing ea
      ```
    - Start the React app:
      ```sh
-     npm start
+     npm run dev
      ```
    - The application should now be running on `http://localhost:3000`.
 
