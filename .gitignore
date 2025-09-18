@@ -1,0 +1,10 @@
+# Node.js dependencies
+/backend/node_modules
+/frontend/node_modules
+
+# Environment variables
+/backend/.env
+/frontend/.env
+
+# Firebase Admin SDK key
+/backend/educollab-c5e3e-firebase-adminsdk-fbsvc-c432b8a95c.json
