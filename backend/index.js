@@ -86,7 +86,7 @@ const server = app.listen(PORT, ()=> console.log(`Server running on PORT ${PORT}
 const io = require('socket.io')(server, {
     pingTimeout: 6000000,
     cors: {
-        origin: "http://localhost:3000",
+        origin: ["http://localhost:3000"],
     }
 });
 let socketRoomsMap = new Map();
