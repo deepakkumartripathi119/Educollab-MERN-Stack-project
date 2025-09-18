@@ -76,12 +76,17 @@ const postMessage = async (req, res) => {
         message: message,
     });
 
+
+    console.log("new Message : ",newMessage);
+    
     // Save the new message document in MongoDB
     const newChatMessage = await newMessage.save();
-
+    
     // Find the chat document by projectID
     const projectId = req.params.projectID;
+    console.log("projectId : ",projectId);
     const chat = await Chat.findOne({projectID: projectId});
+    console.log("chat fetch done!");
 
     // Check if chat document exists
     if (!chat) {
@@ -91,16 +96,7 @@ const postMessage = async (req, res) => {
     // Add the new message ID to the chat document's messages array
     chat.messages.push(newChatMessage._id);
     await chat.save();
-
-    // Now save the message to Firestore
-    const db = await connectDB_fire(); // Ensure you have already called this somewhere appropriate in your app, or ensure it handles repeated calls gracefully
-    const currtime = new Date().toISOString().replace(/[^0-9]/g, "").substring(0, 14);
-    await db.collection('chats').doc(projectId).collection('messages').doc(currtime).set({
-      userID: username,
-      message: message,
-      createdAt: currtime,
-    });
-
+    console.log("chat save done!");
     // Respond with success
     res.status(201).json({ success: true, data: newChatMessage, message: "Message added!" });
   } catch (error) {

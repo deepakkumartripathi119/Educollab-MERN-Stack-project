@@ -23,7 +23,10 @@ const bodyParser = require('body-parser');
 
 const connectDB=require("./Config/db.js");
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}));
 app.use(express.json());
 connectDB();
 
@@ -37,7 +40,7 @@ const authController = require('./Controllers/authController.js');
 
 // Session configuration
 app.use(session({
-    secret: process.env.CLIENTSECRET,
+    secret: process.env.CLIENT_SECRET,
     resave: false,
     saveUninitialized: false
 }));

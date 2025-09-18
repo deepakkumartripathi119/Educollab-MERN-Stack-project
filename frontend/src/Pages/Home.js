@@ -139,7 +139,7 @@ const Home = () => {
 
     const fetchAllDoubts = async () => {
       try {
-        const response = await fetch("http://localhost:5500/doubts/fetch/all");
+        const response = await fetch("http://localhost:5500/doubts");
         if (response.ok) {
           const doubtsData = await response.json();
           setAllDoubts(doubtsData);

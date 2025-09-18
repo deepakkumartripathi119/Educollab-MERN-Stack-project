@@ -1,11 +1,14 @@
+require('dotenv').config();
 const MicrosoftStrategy = require('passport-microsoft').Strategy;
 
 module.exports = (passport) => {
     passport.use(new MicrosoftStrategy({
-        callbackURL: process.env.CALLBACKURL,
-        clientID: process.env.CLIENTID,
-        clientSecret: process.env.CLIENTSECRET,
-        scope: ['openid', 'profile', 'email', 'User.Read']
+        callbackURL: process.env.CALLBACK_URL,
+        clientID: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        scope: ['openid', 'profile', 'email', 'User.Read'],
+        pkce: true,
+        state: true
     }, (accessToken, refreshToken, profile, done) => {
         // Save the user profile in session or database as needed
         return done(null, profile);
@@ -19,3 +22,5 @@ module.exports = (passport) => {
         done(null, obj);
     });
 };
+
+

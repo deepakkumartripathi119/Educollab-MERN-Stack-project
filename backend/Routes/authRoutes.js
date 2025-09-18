@@ -43,7 +43,25 @@ const User = require('../Models/userModel');
 let userData;
 
 
-router.get('/microsoft', passport.authenticate('microsoft', { scope: ['openid', 'profile', 'email', 'User.Read'] }));
+router.get('/microsoft', (req, res, next) => {
+    passport.authenticate('microsoft', (err, user, info) => {
+        if (err) {
+            console.error('Passport authentication error:', err);
+            return res.status(500).send('Authentication Error: ' + err.message);
+        }
+        if (!user) {
+            console.error('Passport authentication failed:', info);
+            return res.redirect('/auth/microsoft/redirect/failure');
+        }
+        req.logIn(user, (err) => {
+            if (err) {
+                console.error('Login error:', err);
+                return next(err);
+            }
+            return res.redirect('/auth/microsoft/redirect/success');
+        });
+    })(req, res, next);
+});
 
 // Auth Callback
 router.get('/microsoft/redirect', passport.authenticate('microsoft', {

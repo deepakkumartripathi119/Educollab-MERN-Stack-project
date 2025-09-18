@@ -2,19 +2,16 @@ require("dotenv").config({ path: __dirname + '/.env' });
 const Firestore = require('@google-cloud/firestore');
 
 const connectDB_fire = async () => {
-    let db;
     try {
-        db = new Firestore({
-            projectId: 'edu-colab-kriti',
+        const db = new Firestore({
+            projectId: 'educollab-c5e3e',
             keyFilename: process.env.GOOGLE_APPLICATIONS_CREDENTIALS,
         });
-        console.log(`Firestore Connected`);
+        return db;
     } catch (error) {
-        console.log(`Error: ${error.message}`);
-        process.exit();
+        console.error("Firestore Connection Error:", error);
+        throw error;
     }
-
-    return db;
 };
 
 module.exports = connectDB_fire;
