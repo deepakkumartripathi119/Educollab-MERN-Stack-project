@@ -43,7 +43,6 @@ const User = require('../Models/userModel');
 let userData;
 
 
-<<<<<<< HEAD
 router.get('/microsoft', (req, res, next) => {
     passport.authenticate('microsoft', (err, user, info) => {
         if (err) {
@@ -63,9 +62,6 @@ router.get('/microsoft', (req, res, next) => {
         });
     })(req, res, next);
 });
-=======
-router.get('/microsoft', passport.authenticate('microsoft', { scope: ['openid', 'profile', 'email', 'User.Read'] }));
->>>>>>> 275e54de885a417eae99909c2ba5e718d5a58f48
 
 // Auth Callback
 router.get('/microsoft/redirect', passport.authenticate('microsoft', {
