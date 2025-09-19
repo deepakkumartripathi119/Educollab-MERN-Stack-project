@@ -15,7 +15,11 @@ function Card({ques,ans}){
     const handleVote = (index, type, answerID) => {
         const userid=JSON.parse(localStorage.getItem("userData"));
         
-        fetch(`http://localhost:5500/api/doubts/votes/${answerID}`, {
+        // Set API URL based on environment
+        const API_URL = process.env.NODE_ENV === 'production'
+            ? process.env.REACT_APP_API_URL_PROD
+            : process.env.REACT_APP_API_URL;
+        fetch(`${API_URL}/api/doubts/votes/${answerID}`, {
         method: 'PUT',
         
         body: JSON.stringify({

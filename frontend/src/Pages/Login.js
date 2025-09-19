@@ -5,7 +5,7 @@ import "./Login.css";
 
 const Login = () => {
   // Set API URL based on environment
-  const API_URL = process.env.NODE_ENV === 'production'
+  const API_URL = (process.env.NODE_ENV === 'production')
     ? process.env.REACT_APP_API_URL_PROD
     : process.env.REACT_APP_API_URL;
   const handleSignIn = () => {

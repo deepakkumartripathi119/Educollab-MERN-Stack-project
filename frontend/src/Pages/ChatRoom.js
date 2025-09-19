@@ -2,7 +2,11 @@
 // import { Link, useParams } from 'react-router-dom';
 // import axios from 'axios';
 // import io from 'socket.io-client';
-// const socket = io.connect('http://localhost:5500');
+// Set API URL based on environment
+const API_URL = process.env.NODE_ENV === 'production'
+  ? process.env.REACT_APP_API_URL_PROD
+  : process.env.REACT_APP_API_URL;
+// const socket = io.connect(API_URL);
 // const ChatRoom = () => {
 //   const userId = useParams().userID;
 //   const [selectedProject, setSelectedProject] = useState(null);
@@ -16,7 +20,7 @@
 //     const fetchCollabedProjects = async () => {
 //       try {
 //         console.log(userId);
-//         const response = await axios.get(`http://localhost:5500/api/collab/collabs/${userId}`);
+//         const response = await axios.get(`${API_URL}/api/collab/collabs/${userId}`);
 //         setCollabedProjects(response.data);
 //       } catch (error) {
 //         console.error('Error fetching collabed projects:', error);
@@ -34,7 +38,7 @@
 //     socket.emit('join-room', {room : projectId});
 //     try {
 //       // Fetch chat messages for the selected project
-//       const response = await axios.get(`http://localhost:5500/api/collab/chat/${projectId}`);
+//       const response = await axios.get(`${API_URL}/api/collab/chat/${projectId}`);
 //       setMessages(response.data);
 //     } catch (error) {
 //       console.error('Error fetching chat messages:', error);
@@ -51,7 +55,7 @@
 //     // Create a new message object
 //     const newMessage = { userID: userId, message: messageInput };
 //     // Make a POST request to store the message
-//     await axios.post(`http://localhost:5500/api/collab/chat/${selectedProject}`,  newMessage );
+//     await axios.post(`${API_URL}/api/collab/chat/${selectedProject}`,  newMessage );
 //     socket.emit('send-message', {user : userId, message : newMessage, sendTo : selectedProject});
 //     }
 //     setMessages([...messages, { userID: userId, message: messageInput }]);
@@ -143,9 +147,7 @@ import ChatList from '../Components/ChatList';
 import'./CollabPage.css';
 
 // Set API URL based on environment
-const API_URL = process.env.NODE_ENV === 'production'
-  ? process.env.REACT_APP_API_URL_PROD
-  : process.env.REACT_APP_API_URL;
+
 const socket = io.connect(API_URL);
 
 const CollabPage = () => {
