@@ -3,9 +3,7 @@
 // import axios from 'axios';
 // import io from 'socket.io-client';
 // Set API URL based on environment
-const API_URL = process.env.NODE_ENV === 'production'
-  ? process.env.REACT_APP_API_URL_PROD
-  : process.env.REACT_APP_API_URL;
+
 // const socket = io.connect(API_URL);
 // const ChatRoom = () => {
 //   const userId = useParams().userID;
@@ -147,7 +145,9 @@ import ChatList from '../Components/ChatList';
 import'./CollabPage.css';
 
 // Set API URL based on environment
-
+const API_URL = process.env.NODE_ENV === 'production'
+  ? process.env.REACT_APP_API_URL_PROD
+  : process.env.REACT_APP_API_URL;
 const socket = io.connect(API_URL);
 
 const CollabPage = () => {
