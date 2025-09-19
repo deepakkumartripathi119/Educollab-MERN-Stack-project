@@ -73,7 +73,7 @@ export default class ChatContent extends Component {
     if (msg.trim() !== '') {
       const newMessage = { userID: userId, message: msg};
       console.log(newMessage);
-      await axios.post(`http://${API_URL}/api/collab/chat/${selectedProject}`, newMessage);
+  await axios.post(`${API_URL}/api/collab/chat/${selectedProject}`, newMessage);
       socket.emit('send-message', { userID: userId, message: newMessage, sendTo: selectedProject});
 
       updateMessages([...messages, newMessage]);
