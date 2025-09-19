@@ -4,7 +4,9 @@ import './askAnsDoubt.css';
 function AskDoubt() {
     const [submitClicked, setSubmitClicked] = useState(false);
     const [question, setQuestion] = useState('');
-
+const API_URL = process.env.NODE_ENV === 'production'
+            ? process.env.REACT_APP_API_URL_PROD
+            : process.env.REACT_APP_API_URL;
     const handleQuestionChange = (event) => {
         setQuestion(event.target.value);
     };
@@ -12,7 +14,7 @@ function AskDoubt() {
     const userid=user._id;  
     const handleSubmit = async () => {
         setSubmitClicked(true);
-        await fetch(`http://localhost:5500/api/doubts/postdoubt/${userid}`, {
+        await fetch(`http://${API_URL}/api/doubts/postdoubt/${userid}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

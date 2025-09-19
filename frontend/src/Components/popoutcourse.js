@@ -151,10 +151,13 @@ const Popoutcourse = ({ course }) => {
   console.log('All Users:', allusers);
     const courseadder=allusers.filter(user => user._id === course.addedBy)[0];
     console.log('course Adder:', courseadder);
+    const API_URL = process.env.NODE_ENV === 'production'
+            ? "educollab-zeta.vercel.app"
+            : "localhost:3000";
     useEffect(() => {
     const fetchFeedback = async () => {
         try {
-            const response = await fetch(`http://localhost:5500/courses/getfeedback/${course._id}`);
+            const response = await fetch(`http://${API_URL}/courses/getfeedback/${course._id}`);
             const feedback = await response.json();
             console.log('All feedback:', feedback.data);
             setFeedbackData(feedback.data);

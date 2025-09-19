@@ -12,10 +12,12 @@ const ProfileCard = () => {
   const handleGithubLinkClick = () => {
     window.open(userData.githubID, '_blank');
   };
-
+const API_URL = process.env.NODE_ENV === 'production'
+            ? process.env.REACT_APP_API_URL_PROD
+            : process.env.REACT_APP_API_URL;
   const handleEditProfileClick = () => {
     const link = document.createElement('a');
-    link.href = 'http://localhost:3000/updateProfile';
+    link.href = `http://${API_URL}/updateProfile`;
     link.style.display = 'none'; // Hide the link
     document.body.appendChild(link);
     link.click();

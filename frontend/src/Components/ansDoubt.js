@@ -8,6 +8,9 @@ function AnsDoubt({quesid}) {
     const handleAnswerChange = (event) => {
         setAnswer(event.target.value);
     };
+    const API_URL = process.env.NODE_ENV === 'production'
+            ? process.env.REACT_APP_API_URL_PROD
+            : process.env.REACT_APP_API_URL;
     const user=JSON.parse(localStorage.getItem("userData"));
     const userid=user._id;
     const handleSubmit = () => {
@@ -16,7 +19,7 @@ function AnsDoubt({quesid}) {
             return;
         }
         setSubmitClicked(true);
-        fetch(`http://localhost:5500/api/doubts/postans/${userid}`, {
+        fetch(`http://${API_URL}/api/doubts/postans/${userid}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

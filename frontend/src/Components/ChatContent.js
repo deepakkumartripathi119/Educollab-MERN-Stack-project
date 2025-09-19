@@ -4,7 +4,9 @@ import attachfilesIcon from "../Assets/attachfiles.svg";
 import "./ChatContent.css";
 import ChatItem from "./ChatItem.js";
 import axios from 'axios';
-
+const API_URL = process.env.NODE_ENV === 'production'
+            ? process.env.REACT_APP_API_URL_PROD
+            : process.env.REACT_APP_API_URL;
 export default class ChatContent extends Component {
   messagesEndRef = createRef();
 
@@ -71,7 +73,7 @@ export default class ChatContent extends Component {
     if (msg.trim() !== '') {
       const newMessage = { userID: userId, message: msg};
       console.log(newMessage);
-      await axios.post(`http://localhost:5500/api/collab/chat/${selectedProject}`, newMessage);
+      await axios.post(`http://${API_URL}/api/collab/chat/${selectedProject}`, newMessage);
       socket.emit('send-message', { userID: userId, message: newMessage, sendTo: selectedProject});
 
       updateMessages([...messages, newMessage]);
