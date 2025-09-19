@@ -29,8 +29,12 @@ const AddCourse = () => {
 
     try {
       console.log("new course: ", values);
+      // Set API URL based on environment
+      const API_URL = process.env.NODE_ENV === 'production'
+        ? process.env.REACT_APP_API_URL_PROD
+        : process.env.REACT_APP_API_URL;
       const response = await fetch(
-        `http://localhost:5500/courses/add/${userid}/addCourse`,
+        `${API_URL}/courses/add/${userid}/addCourse`,
         {
           method: "POST",
           headers: {

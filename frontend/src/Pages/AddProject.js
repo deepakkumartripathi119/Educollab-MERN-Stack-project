@@ -393,7 +393,11 @@ const AddProject = () => {
         alert('Per head credits CANNOT be more than 10% of your credit score');
         return;
       }
-      const response = await fetch(`http://localhost:5500/projects/add/${user._id}`, {
+      // Set API URL based on environment
+      const API_URL = process.env.NODE_ENV === 'production'
+        ? process.env.REACT_APP_API_URL_PROD
+        : process.env.REACT_APP_API_URL;
+      const response = await fetch(`${API_URL}/projects/add/${user._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
