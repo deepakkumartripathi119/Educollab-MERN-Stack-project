@@ -22,8 +22,12 @@ const UpdateProfile = () => {
 
     try {
       console.log("In update profile: ", userData);
+      // Set API URL based on environment
+      const API_URL = process.env.NODE_ENV === 'production'
+        ? process.env.REACT_APP_API_URL_PROD
+        : process.env.REACT_APP_API_URL;
       const response = await fetch(
-        `http://localhost:5500/users/update/${userID}`,
+        `${API_URL}/users/update/${userID}`,
         {
           method: "PATCH",
           headers: {

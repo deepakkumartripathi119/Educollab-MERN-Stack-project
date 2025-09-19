@@ -108,8 +108,10 @@ router.get('/microsoft/redirect/success', logUserDetails, async (req, res) => {
             console.log("User already exists!!")
         }
 
-        // Redirect the user to the dashboard
-        res.redirect('http://localhost:3000/dashboard');
+    // Redirect the user to the dashboard
+    const frontendUrl = process.env.NODE_ENV === 'production' ? process.env.PROD_FRONTEND_URL 
+    : process.env.FRONTEND_URL || 'http://localhost:3000';
+    res.redirect(`${frontendUrl}/dashboard`);
     } catch (error) {
         console.error('Error while processing user data:', error);
         res.redirect('/auth/microsoft/redirect/failure');

@@ -3,8 +3,12 @@
  * @module index.js
  */
 
-const env=require("dotenv");
-env.config({path: __dirname+'/.env'});
+const env = require("dotenv");
+env.config({ path: __dirname + '/.env' });
+
+// Use environment variables for URLs and secrets
+const FRONTEND_URL = process.env.NODE_ENV === 'production' ? process.env.PROD_FRONTEND_URL : process.env.FRONTEND_URL || 'http://localhost:3000';
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const express=require('express');
 const cors=require('cors');
 const app=express();
@@ -24,7 +28,7 @@ const bodyParser = require('body-parser');
 const connectDB=require("./Config/db.js");
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: FRONTEND_URL,
     credentials: true
 }));
 app.use(express.json());
@@ -40,7 +44,7 @@ const authController = require('./Controllers/authController.js');
 
 // Session configuration
 app.use(session({
-    secret: process.env.CLIENT_SECRET,
+    secret: CLIENT_SECRET,
     resave: false,
     saveUninitialized: false
 }));
@@ -80,16 +84,15 @@ app.use('/projects', projectRoutes);
 app.use('/courses', courseRoutes);
 
 
-const PORT = 5500 || process.env.PORT;
-
-const server = app.listen(PORT, ()=> console.log(`Server running on PORT ${PORT}`));
+const PORT = process.env.PORT || 5500;
+const server = app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
 
 /*------------------------------------Chat starts here------------------------------------*/
 
 const io = require('socket.io')(server, {
     pingTimeout: 6000000,
     cors: {
-        origin: ["http://localhost:3000"],
+        origin: [FRONTEND_URL],
     }
 });
 let socketRoomsMap = new Map();

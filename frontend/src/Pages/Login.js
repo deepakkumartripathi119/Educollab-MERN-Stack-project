@@ -4,10 +4,14 @@ import OutlookIcon from "../Assets/outlookIcon.svg";
 import "./Login.css";
 
 const Login = () => {
+  // Set API URL based on environment
+  const API_URL = process.env.NODE_ENV === 'production'
+    ? process.env.REACT_APP_API_URL_PROD
+    : process.env.REACT_APP_API_URL;
   const handleSignIn = () => {
     // Redirect to your backend route for Microsoft authentication
     console.log(window.href);
-    window.location.href = "http://localhost:5500/auth/microsoft";
+    window.location.href = `${API_URL}/auth/microsoft`;
   };
 
   useEffect(() => {
