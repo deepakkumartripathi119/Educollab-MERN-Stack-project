@@ -1,5 +1,5 @@
 # EduCollab: A MERN Stack Project
-
+Deployed Link : https://educollab-zeta.vercel.app
 ## Description
 EduCollab is a web application aimed at enhancing the educational experience by providing a platform for students to collaborate, showcase their projects, and connect with peers. It facilitates sharing knowledge, receiving feedback, and exploring new opportunities in academia.
 
@@ -71,23 +71,37 @@ The user interface is designed to be intuitive and user-friendly, emphasizing ea
      ```
    - Start the React app:
      ```sh
-     npm run dev
+     npm start
      ```
    - The application should now be running on `http://localhost:3000`.
 
 5. **Environment Variables:**
+ ***Backend : ***
    Make a file named .env in the backend folder, it's content should be:
    ```sh
-    MONGO_URI = "Your"
-    CALLBACK_URL = "http://localhost:5500/auth/microsoft/redirect"
-    CLIENT_ID = "Your Microsoft Client ID"
-    CLIENT_SECRET = "Your Microsoft Client Secret"
-    GOOGLE_APPLICATIONS_CREDENTIALS='./edu-colab-kriti-firebase-adminsdk-7xiu0-3731e68b10.json'
-    CLOUD_NAME='du1g4j6f8'
-    CLOUD_API_KEY='775349273443457'
-    CLOUD_API_SECRET='LpwP-jH6DnhyvVieJ5nfbPKp2wI'
+    MONGO_URI="your mongoDB url"
+   CALLBACK_URL="http://localhost:5500/auth/microsoft/redirect"
+   CLIENT_ID="microsoft azure client id"
+   CLIENT_SECRET="microsoft azure client secret"
+   CLOUD_NAME='Educollab'
+   CLOUD_API_KEY='your cloudinary api key'
+   CLOUD_API_SECRET='your cloudinary api secret'
+   GOOGLE_APPLICATIONS_CREDENTIALS='your google application credential file path'
+   GOOGLE_APPLICATIONS_CREDENTIALS_JSON= "Your google application credential value in json"
+   FRONTEND_URL=http://localhost:3000
+   BACKEND_URL=http://localhost:5500
+   PROD_FRONTEND_URL=https://educollab-zeta.vercel.app
+   PROD_BACKEND_URL=https://educollab-backend.onrender.com
+   NODE_ENV=development
     ```
-
+   
+ ***Frontend : ***
+   Make a file named .env in the frontend folder, it's content should be:
+   ```sh
+REACT_APP_API_URL=http://localhost:5500
+REACT_APP_API_URL_PROD=https://educollab-backend.onrender.com
+NODE_ENV = development
+ ```
 ## Web Application Snippets
 
 
