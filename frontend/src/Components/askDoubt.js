@@ -14,7 +14,7 @@ const API_URL = process.env.NODE_ENV === 'production'
     const userid=user._id;  
     const handleSubmit = async () => {
         setSubmitClicked(true);
-        await fetch(`http://${API_URL}/api/doubts/postdoubt/${userid}`, {
+    await fetch(`${API_URL}/api/doubts/postdoubt/${userid}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

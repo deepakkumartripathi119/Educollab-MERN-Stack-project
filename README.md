@@ -78,7 +78,7 @@ The user interface is designed to be intuitive and user-friendly, emphasizing ea
 5. **Environment Variables:**
    Make a file named .env in the backend folder, it's content should be:
    ```sh
-    MONGO_URI = "mongodb+srv://Nikhil:KritiDevAllTeam25@cluster0.mxindjp.mongodb.net/?retryWrites=true&w=majority"
+    MONGO_URI = "Your"
     CALLBACK_URL = "http://localhost:5500/auth/microsoft/redirect"
     CLIENT_ID = "Your Microsoft Client ID"
     CLIENT_SECRET = "Your Microsoft Client Secret"

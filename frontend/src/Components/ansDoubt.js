@@ -19,7 +19,7 @@ function AnsDoubt({quesid}) {
             return;
         }
         setSubmitClicked(true);
-        fetch(`http://${API_URL}/api/doubts/postans/${userid}`, {
+    fetch(`${API_URL}/api/doubts/postans/${userid}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

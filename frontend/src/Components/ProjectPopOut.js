@@ -142,7 +142,7 @@ const API_URL = process.env.NODE_ENV === 'production'
             : process.env.REACT_APP_API_URL;
   const handleJoinEvent = () => {
 
-    fetch(`http://${API_URL}/projects/addContributor/${projectData._id}/${user._id}`, {
+  fetch(`${API_URL}/projects/addContributor/${projectData._id}/${user._id}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -163,7 +163,7 @@ const API_URL = process.env.NODE_ENV === 'production'
     })};
     const fetchComments = async () => {
       try {
-        const response = await fetch(`http://${API_URL}/projects/getComment/${projectData._id}`);
+  const response = await fetch(`${API_URL}/projects/getComment/${projectData._id}`);
         if (!response.ok) {
           throw new Error('Failed to fetch project comments');
         }
@@ -189,7 +189,7 @@ const API_URL = process.env.NODE_ENV === 'production'
     }
       console.log(reviewText, rating);
   
-      fetch(`http://${API_URL}/projects/addComment/${projectData._id}/${user._id}`, {
+  fetch(`${API_URL}/projects/addComment/${projectData._id}/${user._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
