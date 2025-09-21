@@ -1,19 +1,24 @@
 # EduCollab: A MERN Stack Project
 Deployed Link : https://educollab-zeta.vercel.app
 ## Description
+
 EduCollab is a web application aimed at enhancing the educational experience by providing a platform for students to collaborate, showcase their projects, and connect with peers. It facilitates sharing knowledge, receiving feedback, and exploring new opportunities in academia.
 
 ## Tech Stack Used
+
 - **MongoDB:** NoSQL database for storing user data and project information.
 - **Express.js:** Backend web application framework running on Node.js.
 - **React:** Frontend library for building the user interface.
 - **Node.js:** JavaScript runtime environment for executing server-side JavaScript code.
 
 ## User Research
+
 User research was conducted to understand the needs and challenges faced by students in collaborating and sharing their academic projects. Insights gathered from surveys and interviews helped in shaping the features and functionalities of EduCollab.
 
 ## Future Updates
+
 Planned updates include:
+
 - Implementation of wish-list including liked projects, courses, and profiles.
 - Implementation of dynamic search feature for projects, courses, and profiles.
 - AI based doubt solving.
@@ -142,3 +147,4 @@ NODE_ENV = development
 ![doubts-page](./Snippets/doubts-page.png)<br>
 
 ![upvote-downvote](./Snippets/upvote-downvote.png)<br>
+````
